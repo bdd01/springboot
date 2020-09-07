@@ -1,0 +1,46 @@
+create table userInfo(
+	id int(10) primary key,
+	name varchar(20),
+	oaname varchar(20),
+	msisdn varchar(11),
+	provcode varchar(2),
+	citycode varchar(4),
+	passwd varchar(100),
+	key index_name(name)
+);
+insert into userInfo (id,name,oaname,msisdn,provcode,citycode,passwd) values (1,"system","system","123456","00","0000","system");
+
+create table login(
+	id int(10) primary key,
+	name varchar(20),
+	passwd varchar(20)
+);
+
+insert into login (id,name,passwd) values (1,"system","system");
+create table saleAction(
+	id int(10) primary key,
+	actionname varchar(20),
+	begin varchar(30),
+	end varchar(30),
+	citycode varchar(4),
+	numflag varchar(20)
+);
+create table saleJob(
+	id int(10) primary key,
+	jobame varchar(20),
+	begin varchar(30),
+	end varchar(30),
+	school varchar(30),
+	numflag varchar(20),
+	actionname varchar(20)
+);
+insert into saleAction (id,actionname,begin,end,citycode,numflag) values (1,"1活动","20200101","20201231","11","000001");
+insert into saleAction (id,actionname,begin,end,citycode,numflag) values (2,"2活动","20200101","20201231","11","000002");
+insert into saleAction (id,actionname,begin,end,citycode,numflag) values (3,"3活动","20200101","20201231","11","000003");
+insert into saleAction (id,actionname,begin,end,citycode,numflag) values (4,"4活动","20200101","20201231","11","000004");
+insert into saleAction (id,actionname,begin,end,citycode,numflag) values (5,"5活动","20200101","20201231","11","000005");
+insert into saleAction (id,actionname,begin,end,citycode,numflag) values (6,"6活动","20200101","20201231","11","000006");
+insert into saleAction (id,actionname,begin,end,citycode,numflag) values (7,"7活动","20200101","20201231","11","000007");
+insert into saleAction (id,actionname,begin,end,citycode,numflag) values (8,"8活动","20200101","20201231","11","000008");
+insert into saleAction (id,actionname,begin,end,citycode,numflag) values (9,"9活动","20200101","20201231","11","000009");
+insert into saleAction (id,actionname,begin,end,citycode,numflag) values (10,"10活动","20200101","20201231","11","000010");
