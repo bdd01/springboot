@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>系统管理员操作页面</title>
+    <script type="text/javascript" src="/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/common.js"></script>
+</head>
+<body>
+<div style="text-align: center">
+    <h1>系统管理员操作页面</h1>
+    <hr>
+    <form id="createUserForm">
+        ID：<input type="text" name="id" id="id"><br>
+        姓名<input type="text" name="name" id="name"><br>
+        账号<input type="text" name="oaname" id="oaName"><br>
+        手机<input type="text" name="msisdn" id="msisdn"><br>
+        省分<input type="text" name="provcode" id="provCode"><br>
+        地市<input type="text" name="citycode" id="cityCode"><br>
+        密码<input type="password" value="root" name="passwd" id="passwd"><br>
+        <input type="button" value="创建省级管理员" id="createUserButton">
+    </form>
+</div>
+</body>
+</html>
