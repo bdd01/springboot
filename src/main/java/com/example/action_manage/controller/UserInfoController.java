@@ -34,4 +34,25 @@ public class UserInfoController {
         }
         return map;
     }
+    @PostMapping("/checkProvLogin")
+    @ResponseBody
+    public Map<String,Integer> checkProvLogin(UserInfoBo userInfoBo){
+        Map<String,Integer> map = new HashMap<String, Integer>();
+        if(userInfoBo.getName()==null || "".equals(userInfoBo.getName())){
+            map.put("result",0);
+            return map;
+        }
+        if(userInfoBo.getPasswd()==null || "".equals(userInfoBo.getPasswd())){
+            map.put("result",0);
+            return map;
+        }
+        UserInfoBo bo = userInfoService.queryUserInfoByNamePasswd(userInfoBo);
+        if(bo == null){
+            map.put("result",1);
+            return map;
+        }else{
+            map.put("result",2);
+            return map;
+        }
+    }
 }

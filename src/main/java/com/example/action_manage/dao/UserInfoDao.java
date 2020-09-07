@@ -13,4 +13,6 @@ public interface UserInfoDao {
     void insertUserInfo(UserInfoBo userInfoBo);
     @Select("select * from userinfo where name=#{name}")
     UserInfoBo queryUserInfoByName(String name);
+    @Select("select * from userinfo where name=#{name} and passwd=#{passwd}")
+    UserInfoBo queryUserInfoByNamePasswd(UserInfoBo userInfoBo);
 }

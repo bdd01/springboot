@@ -15,4 +15,7 @@ public class UserInfoService {
     public void insertUserInfo(UserInfoBo userInfoBo){
         userInfoDao.insertUserInfo(userInfoBo);
     }
+    public UserInfoBo queryUserInfoByNamePasswd(UserInfoBo userInfoBo){
+        return userInfoDao.queryUserInfoByNamePasswd(userInfoBo);
+    }
 }

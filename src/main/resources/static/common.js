@@ -8,17 +8,19 @@ $(document).ready(function () {
             "success":function (returnData) {
                 if(returnData.result == 0 ){
                     alert("省分工号已存在，无法创建")
+                    location.href="cretaProvUser"
                 }else{
                     alert("省分工号创建成功")
+                    location.href="login"
                 }
             }
         })
 
     })
-    $("#loginButton").click(function () {
+    $("#sysloginButton").click(function () {
         $.ajax({
-            "url":"/checkLogin",
-            "data":$("#loginForm").serialize(),
+            "url":"/checkSysLogin",
+            "data":$("#sysloginForm").serialize(),
             "type":"post",
             "dataType":"json",
             "success":function (returnData) {
@@ -36,5 +38,25 @@ $(document).ready(function () {
         })
 
     })
+    $("#provloginButton").click(function () {
+        $.ajax({
+            "url":"/checkProvLogin",
+            "data":$("#provloginForm").serialize(),
+            "type":"post",
+            "dataType":"json",
+            "success":function (returnData) {
+                if(returnData.result == 0){
+                    alert("用户名或密码不能为空")
+                }else if(returnData.result == 1){
+                    alert("用户名或密码错误")
+                }else{
+                    alert("登录成功")
+                    location.href="cretaProvUser"
+                }
+            }
+        })
+
+    })
+    $("#")
 
 })

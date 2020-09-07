@@ -3,19 +3,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <script type="text/javascript" src="/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="/common.js"></script>
+    <title>登录</title>
 </head>
 <body>
 <div style="text-align: center">
-    <h1>系统管理员登录</h1>
-    <hr>
-    <form id="loginForm">
-        姓名<input type="text" name="name" id="name"><br>
-        密码<input type="password"  name="passwd" id="passwd"><br>
-        <input type="button" value="登录" id="loginButton">
-    </form>
+<h1>登录</h1>
+<hr>
+<a th:href="@{/syslogin}">系统工号登录</a>
+<a th:href="@{/provlogin}">省分工号登录</a>
 </div>
 </body>
 </html>
