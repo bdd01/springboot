@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>营销活动<h1>
+    <hr>
+    <table border="1" align="center">
+        <tr>
+            <th>ACTION ID</th>
+            <th>活动名称</th>
+            <th>开始日期</th>
+            <th>结束日期</th>
+            <th>地市</th>
+            <th>放号目标</th>
+        </tr>
+        <tr th:each="saleaction:${saleactions}">
+            <th th:text="${saleaction.getId()}">
+            <th th:text="${saleaction.getActionname()}">
+            <th th:text="${saleaction.getBegin()}">
+            <th th:text="${saleaction.getEnd()}">
+            <th th:text="${saleaction.getCitycode()}">
+            <th th:text="${saleaction.getNumflag()}">
+        </tr>
+    </table>
+</body>
+</html>
