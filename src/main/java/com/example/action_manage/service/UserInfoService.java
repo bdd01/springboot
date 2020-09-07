@@ -18,4 +18,7 @@ public class UserInfoService {
     public UserInfoBo queryUserInfoByNamePasswd(UserInfoBo userInfoBo){
         return userInfoDao.queryUserInfoByNamePasswd(userInfoBo);
     }
+    public void updatePasswd(UserInfoBo userInfoBo){
+        userInfoDao.updatePasswd(userInfoBo);
+    }
 }

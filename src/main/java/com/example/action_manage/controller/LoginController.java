@@ -23,10 +23,6 @@ public class LoginController {
     public String syslogin(){
         return "syslogin";
     }
-    @RequestMapping("/provlogin")
-    public String provlogin(){
-        return "provlogin";
-    }
     @PostMapping("/checkSysLogin")
     @ResponseBody
     public Map<String,Integer> checkSysLogin(LoginBo loginBo){

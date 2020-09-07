@@ -4,6 +4,7 @@ import com.example.action_manage.bo.UserInfoBo;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -15,4 +16,6 @@ public interface UserInfoDao {
     UserInfoBo queryUserInfoByName(String name);
     @Select("select * from userinfo where name=#{name} and passwd=#{passwd}")
     UserInfoBo queryUserInfoByNamePasswd(UserInfoBo userInfoBo);
+    @Update("update userinfo set passwd=#{passwd} where name=#{name}")
+    void updatePasswd(UserInfoBo userInfoBo);
 }

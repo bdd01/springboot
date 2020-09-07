@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,6 +19,10 @@ public class UserInfoController {
     @RequestMapping("/cretaProvUser")
     public String createProvUser(){
         return "createProvUser";
+    }
+    @RequestMapping("/provlogin")
+    public String provlogin(){
+        return "provuppasswd";
     }
     @PostMapping("/createProv")
     @ResponseBody
@@ -55,4 +60,21 @@ public class UserInfoController {
             return map;
         }
     }
+    @RequestMapping("/querUserInfoForUpdatePass")
+    public String querUserInfoForUpdatePass(String name,Map<String ,Object> map){
+        UserInfoBo user = userInfoService.queryUserInfoByName(name);
+        map.put("user",user);
+        return "userinfo";
+    }
+    @RequestMapping("/updatePass")
+    public String  updatePass(HttpServletRequest request){
+        String name = request.getParameter("name");
+        String passwd =  request.getParameter("passwd");
+        UserInfoBo userinfo = new UserInfoBo();
+        userinfo.setName(name);
+        userinfo.setPasswd(passwd);
+        userInfoService.updatePasswd(userinfo);
+        return "provlogin";
+    }
+
 }
