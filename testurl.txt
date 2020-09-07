@@ -1,0 +1,9 @@
+http://localhost:8801/login
+http://localhost:8801/syslogin
+http://localhost:8801/cretaProvUser
+http://localhost:8801/provlogin
+http://localhost:8801/dobusi
+http://localhost:8801/showaction
+http://localhost:8801/showSaleJobList
+http://localhost:8801/addsalejob
+http://localhost:8801/showSaleJob?school=1
