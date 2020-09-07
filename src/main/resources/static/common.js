@@ -51,7 +51,7 @@ $(document).ready(function () {
                     alert("用户名或密码错误")
                 }else{
                     alert("登录成功")
-                    location.href="cretaProvUser"
+                    location.href="showSaleJobList"
                 }
             }
         })

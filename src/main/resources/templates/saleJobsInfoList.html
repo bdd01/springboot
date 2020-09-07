@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align: center">
+    <h1>营销任务<h1>
+        <hr>
+    <table border="1" align="center">
+        <tr>
+            <th>JOB ID</th>
+            <th>任务名称</th>
+            <th>开始日期</th>
+            <th>结束日期</th>
+            <th>校园</th>
+            <th>放号目标</th>
+            <th>活动名称</th>
+        </tr>
+        <tr th:each="salejob:${saleJobs}">
+            <th th:text="${salejob.getId()}">
+            <th th:text="${salejob.getJobname()}">
+            <th th:text="${salejob.getBegin()}">
+            <th th:text="${salejob.getEnd()}">
+            <th th:text="${salejob.getSchool()}">
+            <th th:text="${salejob.getNumflag()}">
+            <th th:text="${salejob.getActionname()}">
+        </tr>
+    </table>
+    <a th:href="addsalejob"><input type="button" value="添加营销任务"></a>
+</div>
+</body>
+</html>
