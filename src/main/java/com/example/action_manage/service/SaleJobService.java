@@ -14,4 +14,7 @@ public class SaleJobService {
     public List<SaleJobBo> querySchoolSaleJobInfo(Integer school){
         return saleJobDao.querySchoolSaleJobInfo(school);
     }
+    public void insertSaleJobInfo(SaleJobBo saleJobBo){
+        saleJobDao.insertSaleJob(saleJobBo);
+    }
 }
