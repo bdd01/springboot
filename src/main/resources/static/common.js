@@ -57,6 +57,9 @@ $(document).ready(function () {
         })
 
     })
-    $("#")
+    $("#sysloginname").blur(function () {
+        $("#passspan").text("请输入密码")
+        alert("请输入密码")
+    })
 
 })
