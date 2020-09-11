@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Mapper
 public interface LoginDao {
-    @Select("select * from login where name=#{name} and passwd=#{passwd}")
+    @Select("select * from login where name=#{name} and pass_wd=#{passWd}")
     LoginBo queryLoginInfo(LoginBo loginBo);
 }

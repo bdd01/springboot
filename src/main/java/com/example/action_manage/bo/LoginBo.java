@@ -3,7 +3,7 @@ package com.example.action_manage.bo;
 public class LoginBo {
     private Integer id;
     private String name;
-    private String passwd;
+    private String passWd;
 
     public Integer getId() {
         return id;
@@ -21,12 +21,12 @@ public class LoginBo {
         this.name = name;
     }
 
-    public String getPasswd() {
-        return passwd;
+    public String getPassWd() {
+        return passWd;
     }
 
-    public void setPasswd(String passwd) {
-        this.passwd = passwd;
+    public void setPassWd(String passWd) {
+        this.passWd = passWd;
     }
 
     @Override
@@ -34,7 +34,7 @@ public class LoginBo {
         return "LoginBo{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", passwd='" + passwd + '\'' +
+                ", passWd='" + passWd + '\'' +
                 '}';
     }
 }

@@ -35,7 +35,7 @@ public class LoginController {
             map.put("result",0);
             return map;
         }
-        if(loginBo.getPasswd()==null || "".equals(loginBo.getPasswd())){
+        if(loginBo.getPassWd()==null || "".equals(loginBo.getPassWd())){
             map.put("result",0);
             return map;
         }
