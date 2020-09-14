@@ -17,9 +17,11 @@ $(document).ready(function () {
         })
 
     })
-    $("#sysloginButton").click(function () {
+    layui.use(['form','layer'],function(){
+        var form = layui.form;
+        form.on('submit(myForm)',function (data){
         $.ajax({
-            "url":"/checkSysLogin",
+            "url":"/checkLogin",
             "data":$("#sysloginForm").serialize(),
             "type":"post",
             "dataType":"json",
@@ -32,34 +34,13 @@ $(document).ready(function () {
                     alert("请使用系统工号登录")
                 }else{
                     alert("登录成功")
-                    location.href="cretaProvUser"
+                    location.href="main"
                 }
             }
         })
 
-    })
-    $("#provloginButton").click(function () {
-        $.ajax({
-            "url":"/checkProvLogin",
-            "data":$("#provloginForm").serialize(),
-            "type":"post",
-            "dataType":"json",
-            "success":function (returnData) {
-                if(returnData.result == 0){
-                    alert("用户名或密码不能为空")
-                }else if(returnData.result == 1){
-                    alert("用户名或密码错误")
-                }else{
-                    alert("登录成功")
-                    location.href="dobusi"
-                }
-            }
+            return false;
         })
 
     })
-    $("#sysloginname").blur(function () {
-        $("#passspan").text("请输入密码")
-        alert("请输入密码")
-    })
-
 })

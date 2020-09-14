@@ -15,15 +15,12 @@ import java.util.Map;
 public class LoginController {
     @Autowired
     private LoginService loginService;
+
     @RequestMapping("/login")
-    public String login(){
+    public String syslogin(){
         return "login";
     }
-    @RequestMapping("/syslogin")
-    public String syslogin(){
-        return "syslogin";
-    }
-    @PostMapping("/checkSysLogin")
+    @PostMapping("/checkLogin")
     @ResponseBody
     public Map<String,Integer> checkSysLogin(LoginBo loginBo){
         Map<String,Integer> map = new HashMap<String, Integer>();

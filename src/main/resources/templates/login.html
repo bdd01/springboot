@@ -1,16 +1,102 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>登录</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <script type="text/javascript" src="/layui/layui.js"></script>
+    <script type="text/javascript" src="/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/common.js"></script>
+
+    <style type="text/css">
+        .container{
+            width: 420px;
+            height: 320px;
+            min-height: 280px;
+            max-height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            padding: 20px;
+            z-index: 130;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 3px 18px rgba(100, 0, 0, .5);
+            font-size: 16px;
+        }
+        .loginFont{
+            padding-top:15px;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 30px
+        }
+        .layui-input{
+            border-radius: 5px;
+            width: 200px;
+            height: 40px;
+            font-size: 15px;
+        }
+        .layui-form-item{
+            margin-left: -20px;
+        }
+        .layui-btn{
+            margin-left: 40px;
+            border-radius: 5px;
+            width: 200px;
+            height: 40px;
+            font-size: 15px;
+        }
+        .font{
+            margin-left: 40px;
+        }
+        .font-set{
+            font-size: 13px;
+            text-decoration: none;
+            margin-left: 330px;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+
+    </style>
 </head>
 <body>
-<div style="text-align: center">
-<h1>登录</h1>
-<hr>
-<a th:href="@{/syslogin}">系统工号登录</a>
-<a th:href="@{/provlogin}">省分工号登录</a>
-</div>
+<form class="layui-form" id="sysloginForm" method="post">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header layui-bg-blue">
+            <div>
+                <div style="text-align:center;color: white;font-size: 20px;line-height: 60px">
+                    管理系统
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="loginFont">
+            登录
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label font">用户名</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" required  id="sysloginname" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label font">密 &nbsp;&nbsp;码</label>
+            <div class="layui-input-inline">
+                <input type="password" name="passWd" id="sysloginpasswd" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+            </div>
+            <!-- <div class="layui-form-mid layui-word-aux">辅助文字</div> -->
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" id="sysloginButton" lay-submit lay-filter="myForm">登陆</button>
+            </div>
+        </div>
+        <a href="querUserInfoForUpdatePass" class="font-set">忘记密码?</a>
+    </div>
+</form>
 </body>
 </html>

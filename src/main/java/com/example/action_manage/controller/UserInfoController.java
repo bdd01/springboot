@@ -16,13 +16,13 @@ import java.util.Map;
 public class UserInfoController {
     @Autowired
     private UserInfoService userInfoService;
-    @RequestMapping("/cretaProvUser")
+    @RequestMapping("/main")
+    public String main(){
+        return "main";
+    }
+    @RequestMapping("/createProvUser")
     public String createProvUser(){
         return "createProvUser";
-    }
-    @RequestMapping("/provlogin")
-    public String provlogin(){
-        return "provuppasswd";
     }
     @PostMapping("/createProv")
     @ResponseBody
@@ -39,27 +39,6 @@ public class UserInfoController {
         }
         return map;
     }
-    @PostMapping("/checkProvLogin")
-    @ResponseBody
-    public Map<String,Integer> checkProvLogin(UserInfoBo userInfoBo){
-        Map<String,Integer> map = new HashMap<String, Integer>();
-        if(userInfoBo.getName()==null || "".equals(userInfoBo.getName())){
-            map.put("result",0);
-            return map;
-        }
-        if(userInfoBo.getPasswd()==null || "".equals(userInfoBo.getPasswd())){
-            map.put("result",0);
-            return map;
-        }
-        UserInfoBo bo = userInfoService.queryUserInfoByNamePasswd(userInfoBo);
-        if(bo == null){
-            map.put("result",1);
-            return map;
-        }else{
-            map.put("result",2);
-            return map;
-        }
-    }
     @RequestMapping("/querUserInfoForUpdatePass")
     public String querUserInfoForUpdatePass(String name,Map<String ,Object> map){
         UserInfoBo user = userInfoService.queryUserInfoByName(name);
@@ -74,7 +53,7 @@ public class UserInfoController {
         userinfo.setName(name);
         userinfo.setPasswd(passwd);
         userInfoService.updatePasswd(userinfo);
-        return "provlogin";
+        return "login";
     }
 
 }
