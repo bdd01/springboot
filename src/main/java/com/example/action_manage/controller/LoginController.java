@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,7 +23,7 @@ public class LoginController {
     }
     @PostMapping("/checkLogin")
     @ResponseBody
-    public Map<String,Integer> checkSysLogin(LoginBo loginBo){
+    public Map<String,Integer> checkSysLogin(LoginBo loginBo, HttpServletRequest request){
         Map<String,Integer> map = new HashMap<String, Integer>();
         if(!"system".equals(loginBo.getName())){
             map.put("result",9);
@@ -42,6 +43,7 @@ public class LoginController {
             return map;
         }else{
             map.put("result",2);
+            request.getSession().setAttribute("USER_LOGIN","1");
             return map;
         }
     }
