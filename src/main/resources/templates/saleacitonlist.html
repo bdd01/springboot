@@ -4,27 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="static/layui/css/layui.css">
+    <script src="static/layui/layui.js"></script>
 </head>
 <body>
-<h1 align="center">营销活动<h1>
+<h1 align="center">营销活动</h1>
     <hr>
-    <table border="1" align="center">
-        <tr>
-            <th>ACTION ID</th>
-            <th>活动名称</th>
-            <th>开始日期</th>
-            <th>结束日期</th>
-            <th>地市</th>
-            <th>放号目标</th>
-        </tr>
-        <tr th:each="saleaction:${saleactions}">
-            <th th:text="${saleaction.getId()}">
-            <th th:text="${saleaction.getActionname()}">
-            <th th:text="${saleaction.getBegin()}">
-            <th th:text="${saleaction.getEnd()}">
-            <th th:text="${saleaction.getCitycode()}">
-            <th th:text="${saleaction.getNumflag()}">
-        </tr>
-    </table>
+    <table id="demo"></table>
+<script>
+    //JavaScript代码区域
+
+
+    layui.use('table', function(){
+        var table = layui.table;
+        //第一个实例
+        table.render({
+            elem: '#demo'
+            ,height: 312
+            ,url: '/saleacitonlist' //数据接口
+            ,page: true //开启分页
+            ,cols: [
+                [ //表头
+                {field: 'id', title: 'ID', fixed: 'left'}
+                ,{field: 'actionname', title: '活动名称'}
+                ,{field: 'begin', title: '开始时间'}
+                ,{field: 'end', title: '结束时间'}
+                ,{field: 'numflag', title: '号标识'}
+                    ,{field: 'test1', title: 'test1'}
+                    ,{field: 'test2', title: 'test2'}
+
+                ,//{field: 'type', title: '用户类型', templet: function (d) {
+                   //     if(d.type === 0){
+                     //       return "管理员";
+                       // } else {
+                         //   return "普通用户";
+                        //}
+                    //}}
+            ]
+            ]
+        });
+
+    });
+</script>
 </body>
 </html>
