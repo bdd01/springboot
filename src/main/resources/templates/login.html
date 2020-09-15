@@ -26,35 +26,29 @@
 
             font-size: 20px;
         }
-        .layui-form-item{
-            margin-left: -20px;
-        }
         .loginFont{
             padding-top:15px;
-            text-align: center;
             margin-bottom: 30px;
+            text-align: center;
             font-size: 18px;
-
         }
-        .layui-btn{
+        .wordfont{
             margin-left: 40px;
-            border-radius: 5px;
-            width: 200px;
-            height: 40px;
-            font-size: 15px;
         }
         .layui-input{
-            border-radius: 5px;
             width: 200px;
-            height: 40px;
+            border-radius: 5px;
             font-size: 15px;
         }
-        .font{
+
+        .layui-btn{
+            width: 92px;
+            border-radius: 5px;
+            font-size: 15px;
             margin-left: 40px;
         }
-        .font-set{
-            font-size: 13px;
-            margin-left: 330px;
+        .layui-form-item{
+            margin-left: -20px;
         }
 
 
@@ -76,24 +70,24 @@
             登录
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label font">用户名</label>
+            <label class="layui-form-label wordfont">用户名</label>
             <div class="layui-input-block">
-                <input type="text" name="name" required  id="sysloginname" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                <input type="text" name="name"   required lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label font">密 &nbsp;&nbsp;码</label>
-            <div class="layui-input-inline">
-                <input type="password" name="passWd" id="sysloginpasswd" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+            <label class="layui-form-label wordfont">密 &nbsp;&nbsp;码</label>
+            <div class="layui-input-block">
+                <input type="password" name="passWd"  required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
             </div>
-            <!-- <div class="layui-form-mid layui-word-aux">辅助文字</div> -->
         </div>
+        <br>
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button class="layui-btn" id="sysloginButton" lay-submit lay-filter="myForm">登陆</button>
+                <button class="layui-btn" lay-submit lay-filter="myForm">登陆</button>
+                <button class="layui-btn" reset>重置</button>
             </div>
         </div>
-        <a href="querUserInfoForUpdatePass" class="font-set">忘记密码?</a>
     </div>
 </form>
 </body>
